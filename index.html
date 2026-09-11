@@ -477,6 +477,115 @@
     }
   }
 
+
+  .menu-text-preview{
+    margin-top:8px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:#fffdf9;
+    padding:18px 16px;
+  }
+
+  .menu-section{
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+    text-align:center;
+  }
+
+  .menu-section:first-child{padding-top:2px}
+  .menu-section:last-child{
+    border-bottom:none;
+    padding-bottom:2px;
+  }
+
+  .menu-section-title{
+    color:var(--ink);
+    font-size:17px;
+    font-weight:800;
+    letter-spacing:.08em;
+    line-height:1.55;
+    margin-bottom:10px;
+  }
+
+  .menu-section-title span{
+    color:var(--sage-dark);
+    letter-spacing:0;
+    margin-left:8px;
+  }
+
+  .menu-item{
+    margin:10px 0;
+  }
+
+  .menu-item-name{
+    color:var(--ink);
+    font-weight:700;
+    line-height:1.6;
+  }
+
+  .menu-item-name span{
+    color:var(--sage-dark);
+    font-weight:700;
+    margin-left:6px;
+  }
+
+  .menu-en{
+    margin-top:4px;
+    font-size:15px;
+    line-height:1.65;
+    color:var(--muted);
+    font-style:italic;
+  }
+
+  .menu-cn{
+    margin-top:3px;
+    font-size:16px;
+    line-height:1.7;
+    color:var(--muted);
+  }
+
+  .menu-sides{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:10px;
+    color:var(--muted);
+    line-height:1.65;
+  }
+
+  .menu-sides > div{
+    background:var(--soft);
+    border-radius:10px;
+    padding:10px 8px;
+  }
+
+  @media (max-width:760px){
+    .menu-text-preview{
+      padding:15px 13px;
+    }
+
+    .menu-section-title{
+      font-size:19px;
+    }
+
+    .menu-item-name{
+      font-size:18px;
+    }
+
+    .menu-en{
+      font-size:16px;
+    }
+
+    .menu-cn{
+      font-size:18px;
+    }
+
+    .menu-sides{
+      grid-template-columns:1fr;
+      font-size:18px;
+    }
+  }
+
 </style>
 </head>
 
@@ -698,7 +807,83 @@
           当天每桌都会有<strong>中英文对照菜单</strong>。晚餐会按照菜单顺序一道一道上菜，
           大家可以提前看看大概会吃什么。
         </div>
-        <img class="menu-preview" src="menu_preview.jpg" loading="lazy" decoding="async" alt="易雯和迈克婚宴中英文菜单预览">
+        
+        <div class="menu-text-preview">
+
+          <div class="menu-section">
+            <div class="menu-section-title">FAMILY STYLE DINNER <span>家庭分享式晚宴</span></div>
+          </div>
+
+          <div class="menu-section">
+            <div class="menu-section-title">BREAD SERVICE <span>面包篮</span></div>
+            <div class="menu-item">
+              <div class="menu-en">Local sourdough focaccia, artisanal breads, whipped ricotta, butter, and sun-dried tomato pesto</div>
+              <div class="menu-cn">本地酸种佛卡夏面包、精选手工面包、瑞可塔芝士酱、黄油及风干番茄青酱</div>
+            </div>
+          </div>
+
+          <div class="menu-section">
+            <div class="menu-section-title">FIRST COURSE <span>头道菜</span></div>
+            <div class="menu-item">
+              <div class="menu-item-name">Burrata &amp; Tomato <span>布拉塔芝士配番茄</span></div>
+              <div class="menu-en">Fresh burrata, heirloom tomatoes, pickled lotus root, basil, hot honey, and balsamic glaze</div>
+              <div class="menu-cn">新鲜布拉塔芝士、彩色番茄、甜藕、罗勒、辣味蜂蜜与意大利黑醋酱</div>
+            </div>
+          </div>
+
+          <div class="menu-section">
+            <div class="menu-section-title">SECOND COURSE <span>第二道菜</span></div>
+            <div class="menu-item">
+              <div class="menu-item-name">Glass Noodles with Seared Scallops <span>蒜香扇贝拌粉</span></div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-name">Calamari with Lemon &amp; Marinara Sauce <span>意式炸鱿鱼配柠檬番茄酱</span></div>
+            </div>
+          </div>
+
+          <div class="menu-section">
+            <div class="menu-section-title">MAIN COURSE <span>主菜</span></div>
+            <div class="menu-item">
+              <div class="menu-item-name">Braised Short Ribs with Red Wine Demi-Glace <span>红酒慢煨牛小排</span></div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-name">Gochujang Alla Vodka Noodles <span>韩式辣酱伏特加意面</span></div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-name">Whole Grilled Branzino with Ginger &amp; Scallion <span>姜葱香烤地中海海鲈鱼</span></div>
+            </div>
+            <div class="menu-sides">
+              <div><strong>Sautéed Baby Bok Choy</strong><br>清炒青菜</div>
+              <div><strong>Kokuho White Rice</strong><br>米饭</div>
+            </div>
+          </div>
+
+          <div class="menu-section">
+            <div class="menu-section-title">VEGETARIAN OPTION <span>素食选择</span></div>
+            <div class="menu-sides">
+              <div><strong>Miso Ginger Glazed Tofu</strong><br>味噌姜汁豆腐</div>
+              <div><strong>Eggplant Mozzarella Stack with Basil Pesto</strong><br>罗勒青酱茄子芝士塔</div>
+            </div>
+          </div>
+
+          <div class="menu-section">
+            <div class="menu-section-title">SWEET ENDINGS <span>甜品时光</span></div>
+            <div class="menu-item">
+              <div class="menu-item-name">Cannoli Assortment <span>经典意式奶油卷</span></div>
+              <div class="menu-cn">香草、巧克力豆、开心果</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-name">Chinese Pastries Selection <span>精选中式点心</span></div>
+              <div class="menu-cn">月饼、蛋挞、甜面包</div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-name">Coffee &amp; Tea Service <span>咖啡与茶</span></div>
+              <div class="menu-cn">现煮咖啡与精选茶饮</div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </details>
 
