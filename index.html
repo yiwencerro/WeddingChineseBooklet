@@ -160,9 +160,19 @@
     font-size:25px;
     color:var(--sage-dark);
     font-weight:400;
+    width:34px;
+    height:34px;
+    border:1px solid var(--line);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--soft);
+    line-height:1;
   }
 
   details[open] summary::after{content:"–"}
+  details[open] summary{color:var(--sage-dark)}
 
   .answer{
     padding:0 0 20px;
@@ -250,6 +260,51 @@
     margin-bottom:4px;
   }
 
+  .drink-list{
+    display:grid;
+    gap:12px;
+  }
+
+  .drink-card{
+    background:var(--soft);
+    border-radius:12px;
+    padding:14px 16px;
+  }
+
+  .drink-card .drink-name{
+    font-weight:800;
+    color:var(--ink);
+    margin-bottom:4px;
+    line-height:1.45;
+  }
+
+  .drink-card .drink-type{
+    color:var(--sage-dark);
+    font-weight:700;
+    margin-bottom:5px;
+  }
+
+  .drink-card .drink-desc{
+    color:var(--muted);
+    line-height:1.65;
+    font-size:16px;
+  }
+
+  .menu-section{
+    margin:8px 0 18px;
+  }
+
+  .menu-section h3{
+    margin:16px 0 6px;
+    color:var(--sage-dark);
+    font-size:17px;
+  }
+
+  .menu-item{
+    margin:6px 0;
+    line-height:1.65;
+  }
+
   .footer{
     margin-top:22px;
     text-align:center;
@@ -292,17 +347,9 @@
       grid-column:1 / -1;
     }
 
-    .important-card .time{
-      font-size:28px;
-    }
-
-    .important-card .label{
-      font-size:18px;
-    }
-
-    .important-card .sub{
-      font-size:15px;
-    }
+    .important-card .time{font-size:28px}
+    .important-card .label{font-size:18px}
+    .important-card .sub{font-size:15px}
 
     .hint{
       font-size:15px;
@@ -315,6 +362,12 @@
       min-height:72px;
       font-size:21px;
       padding:19px 0;
+    }
+
+    summary::after{
+      width:38px;
+      height:38px;
+      font-size:27px;
     }
 
     .answer{
@@ -331,11 +384,15 @@
     .mini-time{font-size:19px}
     .mini-text{font-size:19px}
 
-    .two-col{
-      grid-template-columns:1fr;
-    }
-
+    .two-col{grid-template-columns:1fr}
     .small-card h3{font-size:20px}
+
+    .drink-card .drink-name{font-size:20px}
+    .drink-card .drink-type{font-size:18px}
+    .drink-card .drink-desc{
+      font-size:18px;
+      line-height:1.7;
+    }
   }
 
   @media print{
@@ -349,28 +406,15 @@
       padding:0;
     }
 
-    .intro,.accordion,.important-card{
-      box-shadow:none;
-    }
-
-    .important-grid{
-      grid-template-columns:repeat(5,1fr);
-    }
-
+    .intro,.accordion,.important-card{box-shadow:none}
+    .important-grid{grid-template-columns:repeat(5,1fr)}
     .hint{display:none}
 
-    details{
-      break-inside:avoid;
-    }
-
-    details > .answer{
-      display:block !important;
-    }
+    details{break-inside:avoid}
+    details > .answer{display:block !important}
 
     details[open] summary::after,
-    summary::after{
-      display:none;
-    }
+    summary::after{display:none}
 
     summary{
       cursor:default;
@@ -378,214 +422,9 @@
       padding:12px 0 6px;
     }
 
-    .answer{
-      padding-bottom:12px;
-    }
-
-    .footer{
-      margin-top:12px;
-    }
+    .answer{padding-bottom:12px}
+    .footer{margin-top:12px}
   }
-
-  .preview-note{
-    margin-bottom:14px;
-    line-height:1.7;
-  }
-
-  .menu-preview{
-    width:100%;
-    display:block;
-    border-radius:14px;
-    border:1px solid var(--line);
-    background:white;
-  }
-
-  .drink-list{
-    display:grid;
-    gap:12px;
-  }
-
-  .drink-card{
-    background:var(--soft);
-    border-radius:12px;
-    padding:14px 16px;
-  }
-
-  .drink-card .drink-name{
-    font-weight:800;
-    color:var(--ink);
-    margin-bottom:4px;
-    line-height:1.45;
-  }
-
-  .drink-card .drink-type{
-    color:var(--sage-dark);
-    font-weight:700;
-    margin-bottom:5px;
-  }
-
-  .drink-card .drink-desc{
-    color:var(--muted);
-    line-height:1.65;
-    font-size:16px;
-  }
-
-  @media (max-width:760px){
-    .drink-card .drink-name{
-      font-size:20px;
-    }
-
-    .drink-card .drink-type{
-      font-size:18px;
-    }
-
-    .drink-card .drink-desc{
-      font-size:18px;
-      line-height:1.7;
-    }
-  }
-
-  @media print{
-    .menu-preview{
-      max-height:8.5in;
-      object-fit:contain;
-    }
-  }
-
-
-  summary::after{
-    width:34px;
-    height:34px;
-    border:1px solid var(--line);
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:var(--soft);
-    line-height:1;
-  }
-
-  details[open] summary{
-    color:var(--sage-dark);
-  }
-
-  @media (max-width:760px){
-    summary::after{
-      width:38px;
-      height:38px;
-      font-size:27px;
-    }
-  }
-
-
-  .menu-text-preview{
-    margin-top:8px;
-    border:1px solid var(--line);
-    border-radius:14px;
-    background:#fffdf9;
-    padding:18px 16px;
-  }
-
-  .menu-section{
-    padding:14px 0;
-    border-bottom:1px solid var(--line);
-    text-align:center;
-  }
-
-  .menu-section:first-child{padding-top:2px}
-  .menu-section:last-child{
-    border-bottom:none;
-    padding-bottom:2px;
-  }
-
-  .menu-section-title{
-    color:var(--ink);
-    font-size:17px;
-    font-weight:800;
-    letter-spacing:.08em;
-    line-height:1.55;
-    margin-bottom:10px;
-  }
-
-  .menu-section-title span{
-    color:var(--sage-dark);
-    letter-spacing:0;
-    margin-left:8px;
-  }
-
-  .menu-item{
-    margin:10px 0;
-  }
-
-  .menu-item-name{
-    color:var(--ink);
-    font-weight:700;
-    line-height:1.6;
-  }
-
-  .menu-item-name span{
-    color:var(--sage-dark);
-    font-weight:700;
-    margin-left:6px;
-  }
-
-  .menu-en{
-    margin-top:4px;
-    font-size:15px;
-    line-height:1.65;
-    color:var(--muted);
-    font-style:italic;
-  }
-
-  .menu-cn{
-    margin-top:3px;
-    font-size:16px;
-    line-height:1.7;
-    color:var(--muted);
-  }
-
-  .menu-sides{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin-top:10px;
-    color:var(--muted);
-    line-height:1.65;
-  }
-
-  .menu-sides > div{
-    background:var(--soft);
-    border-radius:10px;
-    padding:10px 8px;
-  }
-
-  @media (max-width:760px){
-    .menu-text-preview{
-      padding:15px 13px;
-    }
-
-    .menu-section-title{
-      font-size:19px;
-    }
-
-    .menu-item-name{
-      font-size:18px;
-    }
-
-    .menu-en{
-      font-size:16px;
-    }
-
-    .menu-cn{
-      font-size:18px;
-    }
-
-    .menu-sides{
-      grid-template-columns:1fr;
-      font-size:18px;
-    }
-  }
-
 </style>
 </head>
 
@@ -606,12 +445,12 @@
   <div class="important-grid">
     <div class="important-card primary">
       <div class="time">11:45 AM</div>
-      <div class="label">到达教堂</div>
+      <div class="label">宾客到达教堂</div>
       <div class="sub">12:00 PM 仪式准时开始</div>
     </div>
 
     <div class="important-card">
-      <div class="time">约 1:00 PM</div>
+      <div class="time">12:45 PM</div>
       <div class="label">教堂门口合影</div>
       <div class="sub">请先不要离开</div>
     </div>
@@ -623,7 +462,7 @@
     </div>
 
     <div class="important-card">
-      <div class="time">约 5:10 PM</div>
+      <div class="time">约 5:00 PM</div>
       <div class="label">晚餐开始</div>
       <div class="sub">Family Style</div>
     </div>
@@ -646,11 +485,13 @@
         不需要完全听懂每一句英文，也不需要记什么时候起立、坐下，<strong>跟着现场其他宾客一起就可以</strong>。
         <br><br>
         婚礼开始前，<strong>易雯会和爸爸妈妈一起在教堂外面等候</strong>。等前面的入场完成、音乐响起并轮到我们时，
-        <strong>易雯及父母三个人才会一起走进教堂。</strong>对大部分宾客（包括迈克）来说，这会是当天第一次看到易雯穿着婚纱出现。
+        <strong>易雯和爸爸妈妈三个人才会一起走进教堂。</strong>
+        对大部分宾客（包括迈克）来说，这会是当天第一次看到易雯穿着婚纱出现。
         走到圣坛前后，爸爸妈妈不用跟着易雯上台，而是去各自预留的第一排座位：
         <strong>爸爸和自己的太太坐在一侧第一排；妈妈坐在另一侧第一排，和迈克的爸爸妈妈一起。</strong>
         <div class="note">
-          仪式结束后，请大家先留在<strong>教堂门口</strong>，我们会拍全体合影和家庭合影。
+          仪式预计<strong>12:45 PM左右结束</strong>。结束后请大家先留在<strong>教堂门口</strong>，
+          我们会马上拍全体合影和家庭合影。
         </div>
       </div>
     </details>
@@ -660,9 +501,11 @@
       <div class="answer">
         <div class="two-col">
           <div class="small-card">
-            <h3>爸爸妈妈在教堂</h3>
+            <h3>爸爸妈妈去教堂</h3>
             <ul>
-              <li>建议<strong>11:45 AM左右到达教堂</strong>，到后先和易雯在教堂外等候，不需要先入座。</li>
+              <li><strong>11:45 AM左右</strong>和易雯一起从住处出发去教堂。</li>
+              <li><strong>由爸爸的司机开车</strong>，易雯、爸爸和妈妈三个人一起过去。</li>
+              <li>预计<strong>11:55 AM左右到达</strong>。到达后和易雯一起在教堂外等候，不需要先入座。</li>
               <li>等前面的入场完成、音乐响起并轮到我们时，爸爸妈妈和易雯三个人一起走进教堂。</li>
               <li>走到圣坛前后，<strong>不用跟着易雯上台</strong>，而是各自去第一排预留座位。</li>
               <li><strong>爸爸</strong>和自己的太太坐在一侧第一排。</li>
@@ -670,11 +513,12 @@
               <li>仪式结束后请先不要离开，留下来参加全体和家庭合影。</li>
             </ul>
           </div>
+
           <div class="small-card">
             <h3>爸爸下午还要记住</h3>
             <ul>
-              <li>新人第一支舞之后，会和易雯跳父女舞。</li>
-              <li>大约4:50 PM和<strong>迈克的爸爸一起敬酒</strong>。</li>
+              <li>大约<strong>4:00 PM</strong>，新人第一支舞之后，会和易雯跳父女舞。</li>
+              <li>大约<strong>4:30 PM</strong>，和迈克的爸爸一起简短致辞和敬酒。</li>
               <li>如果想说几句，可以自由发挥，简单说几句就好，不需要正式长篇演讲。</li>
             </ul>
           </div>
@@ -688,10 +532,13 @@
     </details>
 
     <details>
-      <summary>自由活动时间</summary>
+      <summary>1:00–3:00 PM 自由时间</summary>
       <div class="answer">
         教堂合影结束后，新人会去<strong>海边拍照</strong>。
-        这两个小时家人没有必须参加的安排，可以散步、喝咖啡、回住处休息，顺便补补精神。
+        这段时间家人没有必须参加的安排，可以散步、喝咖啡、回住处休息，顺便补补精神。
+        <br><br>
+        Bellport Inn 从<strong>2:00 PM左右会有现场三重奏音乐</strong>，
+        如果想提前过去休息、听音乐也可以。<strong>正式鸡尾酒时间从3:00 PM开始。</strong>
         <div class="note">
           大家到美国只有两天，如果还在倒时差、觉得困，完全可以趁这段时间<strong>睡一小会儿</strong>。
           只要下午<strong>3:00前回到 Bellport Inn</strong>就可以。
@@ -703,38 +550,84 @@
       <summary>婚宴流程</summary>
       <div class="answer">
         <div class="mini-timeline">
+
           <div class="mini-row">
             <div class="mini-time">3:00 PM</div>
-            <div class="mini-text"><strong>鸡尾酒时间</strong>喝酒、喝饮料、聊天。</div>
+            <div class="mini-text">
+              <strong>鸡尾酒时间</strong>
+              喝酒、喝饮料、聊天，现场有音乐。
+            </div>
           </div>
+
+          <div class="mini-row">
+            <div class="mini-time">约 4:00 PM</div>
+            <div class="mini-text">
+              <strong>新人第一支舞 + 父女舞</strong>
+              易雯和迈克先跳，然后易雯和爸爸跳。
+            </div>
+          </div>
+
           <div class="mini-row">
             <div class="mini-time">约 4:15 PM</div>
-            <div class="mini-text"><strong>新人第一支舞 + 父女舞</strong>易雯和迈克先跳，然后易雯和爸爸跳。</div>
+            <div class="mini-text">
+              <strong>伴娘长与伴郎长 简短致辞</strong>
+              重要内容会有现场翻译。
+            </div>
           </div>
+
           <div class="mini-row">
-            <div class="mini-time">约 4:30–5:00 PM</div>
-            <div class="mini-text"><strong>伴娘伴郎致辞、两位爸爸敬酒、小仪式</strong>内容都比较简短，都会有现场翻译。</div>
+            <div class="mini-time">约 4:30 PM</div>
+            <div class="mini-text">
+              <strong>两位爸爸简短致辞和敬酒</strong>
+              不需要长篇演讲，轻松简单就好。
+            </div>
           </div>
+
           <div class="mini-row">
-            <div class="mini-time">约 5:10 PM</div>
-            <div class="mini-text"><strong>晚餐开始</strong>之后大家就可以轻松吃饭、聊天。</div>
+            <div class="mini-time">约 5:00 PM</div>
+            <div class="mini-text">
+              <strong>晚餐开始</strong>
+              之后大家就可以轻松吃饭、聊天。
+            </div>
           </div>
+
           <div class="mini-row">
-            <div class="mini-time">晚餐后</div>
-            <div class="mini-text"><strong>大家自由跳舞、聊天、庆祝</strong>想跳就跳，不想跳也可以坐着休息。</div>
+            <div class="mini-time">约 6:35 PM</div>
+            <div class="mini-text">
+              <strong>宾客派对跳舞时间</strong>
+              想跳就跳，不想跳也可以坐着聊天休息。
+            </div>
           </div>
+
           <div class="mini-row">
             <div class="mini-time">约 7:30 PM</div>
-            <div class="mini-text"><strong>新人切蛋糕</strong>之后有甜点、茶和咖啡。</div>
+            <div class="mini-text">
+              <strong>新人切蛋糕</strong>
+              同时开始甜点、茶和咖啡。主持人只会简单通知，不需要大家停下正在做的事情。
+            </div>
           </div>
+
+          <div class="mini-row">
+            <div class="mini-time">7:35 PM 后</div>
+            <div class="mini-text">
+              <strong>继续跳舞和聊天</strong>
+              音乐会重新回到跳舞的节奏。
+            </div>
+          </div>
+
           <div class="mini-row">
             <div class="mini-time">9:00 PM</div>
-            <div class="mini-text"><strong>当天正式活动基本结束</strong>酒吧服务结束。</div>
+            <div class="mini-text">
+              <strong>正式酒吧服务结束</strong>
+              之后会有比较轻松的火炉边 After Party，想留下来聊天可以继续留下。
+            </div>
           </div>
+
         </div>
 
         <div class="note">
-          如果当天比较累，<strong>7:30左右看完我们切蛋糕以后就可以回去休息</strong>，不用觉得一定要待到9点。
+          如果当天比较累，<strong>7:30左右看完我们切蛋糕以后就可以回去休息</strong>，
+          不用觉得一定要待到9点。
         </div>
       </div>
     </details>
@@ -745,18 +638,21 @@
         晚餐是<strong>Family Style（家庭分享式）</strong>，吃法和中餐大家一起分享菜很像。
         菜会放在桌子中间，大家使用桌上的<strong>公叉、公勺</strong>，把自己想吃的分量夹到或盛到自己的盘子里。
         <br><br>
-        和中餐稍微不同的是，<strong>菜不会一次全部上齐</strong>。工作人员会按照菜单上的顺序一道一道上，一道吃得差不多以后，再上下一道。
+        和中餐稍微不同的是，<strong>菜不会一次全部上齐</strong>。工作人员会按照菜单上的顺序一道一道上，
+        一道吃得差不多以后，再上下一道。
         <br><br>
-        每个人座位上都会有一双我们准备的<strong>纪念筷子</strong>。这双筷子当天就可以直接使用，如果习惯用筷子，可以直接在婚宴使用。用完以后也可以带回家留作纪念。
+        每个人座位上都会有一双我们准备的<strong>纪念筷子</strong>。这双筷子当天就可以直接使用，
+        如果习惯用筷子，可以直接在婚宴使用。用完以后也可以带回家留作纪念。
       </div>
     </details>
 
     <details>
       <summary>酒水与饮料</summary>
       <div class="answer">
-        想喝什么可以直接到吧台点。吧台会放<strong>中英文对照的酒单</strong>，如果不知道英文怎么说，直接指着酒单上的名字给工作人员看就可以。
+        婚宴会有服务人员倒水，除此之外，可以走到吧台点酒。吧台会放<strong>中英文对照的酒单</strong>，
+        如果不知道英文怎么说，直接指着酒单上的名字给工作人员看就可以。
         <br><br>
-        不喝酒也没关系，会有其他饮料可以选择。
+        不喝酒也没关系，会有无酒精饮料和其他饮品可以选择。
       </div>
     </details>
 
@@ -765,135 +661,78 @@
       <div class="answer">
         不用担心。教堂有<strong>中英文流程小册子</strong>，重要的婚宴致辞也会有翻译。
         <br><br>
-        另外，<strong>每一桌都会有会说英文的朋友一起坐</strong>。如果服务员说了什么没听懂、看不懂菜单、需要问事情或者需要翻译，都可以直接请他们帮忙。
+        另外，每一桌都会有会说英文的朋友一起坐。如果服务员说了什么没听懂、看不懂菜单、
+        需要问事情或者需要翻译，都可以直接请他们帮忙。
         <div class="note">
-          如果需要翻译或帮忙，可以直接问同桌的朋友。<strong>能陪着家人一起参与、帮忙沟通，也是他们参与这场婚礼的一份互动和连接</strong>，所以不用觉得不好意思。
+          如果需要翻译或帮忙，可以直接问同桌的朋友，不用觉得不好意思。
         </div>
       </div>
     </details>
 
-
     <details>
       <summary>婚宴座位</summary>
       <div class="answer">
-        婚宴座位已经提前安排好，到现场后找到<strong>写有自己名字的座位</strong>就可以入座。
-        每个座位上都会放有我们准备的随手礼，婚礼结束后请<strong>笑纳带回家留作纪念</strong>。
+        婚宴座位已经提前安排好，到现场后找到写有自己名字的座位就可以入座。
+        每个座位上都会放有我们准备的随手礼，婚礼结束后请笑纳带回家留作纪念。
       </div>
     </details>
-
-    <details>
-      <summary>婚礼小纪念</summary>
-      <div class="answer">
-        当天座位上的<strong>筷子、扇子和杯子</strong>都是我们为大家准备的一点小心意。
-        婚礼当天可以直接使用，之后也请<strong>笑纳带回家留作纪念</strong>。
-      </div>
-    </details>
-
-    <details>
+<details>
       <summary>穿着与天气</summary>
       <div class="answer">
-        <strong>女士：</strong>建议穿长裙或连衣裙，只要避免白色系就可以。<br><br>
-        <strong>男士：</strong>建议穿西装，鞋子以舒适为主，可以穿舒适的皮鞋。<br><br>
+        <strong>女士：</strong>建议穿长裙或连衣裙，只要避免白色系就可以。
+        <br>
+        <strong>男士：</strong>建议穿西装，鞋子以舒适为主，可以穿舒适的皮鞋。
+        <br><br>
         纽约9月底到10月初天气变化比较大，早晚可能会有点凉，而且婚宴会在室外花园举行。
         建议大家另外带一件<strong>薄外套或披肩</strong>，晚上觉得冷的时候可以加上。
       </div>
     </details>
 
-
     <details>
       <summary>晚宴菜单预览</summary>
       <div class="answer">
-        <div class="preview-note">
-          当天每桌都会有<strong>中英文对照菜单</strong>。晚餐会按照菜单顺序一道一道上菜，
-          大家可以提前看看大概会吃什么。
+        当天每桌都会有中英文对照菜单。晚餐会按照菜单顺序一道一道上菜，大家可以提前看看大概会吃什么。
+
+        <div class="menu-section">
+          <h3>FAMILY STYLE DINNER｜家庭分享式晚宴</h3>
+
+          <div class="menu-item"><strong>BREAD SERVICE｜面包篮</strong><br>
+          Local sourdough focaccia, artisanal breads, whipped ricotta, butter, and sun-dried tomato pesto<br>
+          本地酸种佛卡夏面包、精选手工面包、瑞可塔芝士酱、黄油及风干番茄青酱</div>
+
+          <h3>FIRST COURSE｜头道菜</h3>
+          <div class="menu-item"><strong>Burrata &amp; Tomato｜布拉塔芝士配番茄</strong><br>
+          Fresh burrata, heirloom tomatoes, pickled lotus root, basil, hot honey, and balsamic glaze<br>
+          新鲜布拉塔芝士、彩色番茄、甜藕、罗勒、辣味蜂蜜与意大利黑醋酱</div>
+
+          <h3>SECOND COURSE｜第二道菜</h3>
+          <div class="menu-item">Glass Noodles with Seared Scallops｜蒜香扇贝拌粉</div>
+          <div class="menu-item">Calamari with Lemon &amp; Marinara Sauce｜意式炸鱿鱼配柠檬番茄酱</div>
+
+          <h3>MAIN COURSE｜主菜</h3>
+          <div class="menu-item">Braised Short Ribs with Red Wine Demi-Glace｜红酒慢煨牛小排</div>
+          <div class="menu-item">Gochujang Alla Vodka Noodles｜韩式辣酱伏特加意面</div>
+          <div class="menu-item">Whole Grilled Branzino with Ginger &amp; Scallion｜姜葱香烤地中海海鲈鱼</div>
+          <div class="menu-item">Sautéed Baby Bok Choy｜清炒青菜</div>
+          <div class="menu-item">Kokuho White Rice｜米饭</div>
+
+          <h3>VEGETARIAN OPTION｜素食选择</h3>
+          <div class="menu-item">Miso Ginger Glazed Tofu｜味噌姜汁豆腐</div>
+          <div class="menu-item">Eggplant Mozzarella Stack with Basil Pesto｜罗勒青酱茄子芝士塔</div>
+
+          <h3>SWEET ENDINGS｜甜品时光</h3>
+          <div class="menu-item">Cannoli Assortment｜经典意式奶油卷<br>香草、巧克力豆、开心果</div>
+          <div class="menu-item">Chinese Pastries Selection｜精选中式点心<br>月饼、蛋挞、甜面包</div>
+          <div class="menu-item">Coffee &amp; Tea Service｜咖啡与茶<br>现煮咖啡与精选茶饮</div>
         </div>
-        
-        <div class="menu-text-preview">
-
-          <div class="menu-section">
-            <div class="menu-section-title">FAMILY STYLE DINNER <span>家庭分享式晚宴</span></div>
-          </div>
-
-          <div class="menu-section">
-            <div class="menu-section-title">BREAD SERVICE <span>面包篮</span></div>
-            <div class="menu-item">
-              <div class="menu-en">Local sourdough focaccia, artisanal breads, whipped ricotta, butter, and sun-dried tomato pesto</div>
-              <div class="menu-cn">本地酸种佛卡夏面包、精选手工面包、瑞可塔芝士酱、黄油及风干番茄青酱</div>
-            </div>
-          </div>
-
-          <div class="menu-section">
-            <div class="menu-section-title">FIRST COURSE <span>头道菜</span></div>
-            <div class="menu-item">
-              <div class="menu-item-name">Burrata &amp; Tomato <span>布拉塔芝士配番茄</span></div>
-              <div class="menu-en">Fresh burrata, heirloom tomatoes, pickled lotus root, basil, hot honey, and balsamic glaze</div>
-              <div class="menu-cn">新鲜布拉塔芝士、彩色番茄、甜藕、罗勒、辣味蜂蜜与意大利黑醋酱</div>
-            </div>
-          </div>
-
-          <div class="menu-section">
-            <div class="menu-section-title">SECOND COURSE <span>第二道菜</span></div>
-            <div class="menu-item">
-              <div class="menu-item-name">Glass Noodles with Seared Scallops <span>蒜香扇贝拌粉</span></div>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-name">Calamari with Lemon &amp; Marinara Sauce <span>意式炸鱿鱼配柠檬番茄酱</span></div>
-            </div>
-          </div>
-
-          <div class="menu-section">
-            <div class="menu-section-title">MAIN COURSE <span>主菜</span></div>
-            <div class="menu-item">
-              <div class="menu-item-name">Braised Short Ribs with Red Wine Demi-Glace <span>红酒慢煨牛小排</span></div>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-name">Gochujang Alla Vodka Noodles <span>韩式辣酱伏特加意面</span></div>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-name">Whole Grilled Branzino with Ginger &amp; Scallion <span>姜葱香烤地中海海鲈鱼</span></div>
-            </div>
-            <div class="menu-sides">
-              <div><strong>Sautéed Baby Bok Choy</strong><br>清炒青菜</div>
-              <div><strong>Kokuho White Rice</strong><br>米饭</div>
-            </div>
-          </div>
-
-          <div class="menu-section">
-            <div class="menu-section-title">VEGETARIAN OPTION <span>素食选择</span></div>
-            <div class="menu-sides">
-              <div><strong>Miso Ginger Glazed Tofu</strong><br>味噌姜汁豆腐</div>
-              <div><strong>Eggplant Mozzarella Stack with Basil Pesto</strong><br>罗勒青酱茄子芝士塔</div>
-            </div>
-          </div>
-
-          <div class="menu-section">
-            <div class="menu-section-title">SWEET ENDINGS <span>甜品时光</span></div>
-            <div class="menu-item">
-              <div class="menu-item-name">Cannoli Assortment <span>经典意式奶油卷</span></div>
-              <div class="menu-cn">香草、巧克力豆、开心果</div>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-name">Chinese Pastries Selection <span>精选中式点心</span></div>
-              <div class="menu-cn">月饼、蛋挞、甜面包</div>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-name">Coffee &amp; Tea Service <span>咖啡与茶</span></div>
-              <div class="menu-cn">现煮咖啡与精选茶饮</div>
-            </div>
-          </div>
-
-        </div>
-
       </div>
     </details>
 
     <details>
       <summary>酒水单预览</summary>
       <div class="answer">
-        <div class="preview-note">
-          吧台当天也会有<strong>中英文对照酒单</strong>。如果不知道英文怎么点，
-          直接指着酒单上的名字给工作人员看就可以。
-        </div>
+        吧台当天也会有中英文对照酒单。如果不知道英文怎么点，直接指着酒单上的名字给工作人员看就可以。
+        <br><br>
 
         <div class="drink-list">
           <div class="drink-card">
@@ -918,8 +757,7 @@
           <div class="drink-card">
             <div class="drink-name">PJ｜波本古典鸡尾酒</div>
             <div class="drink-type">Bourbon Old Fashioned｜波本古典</div>
-            <div class="drink-desc">Woodford Bourbon · Maraschino Cherry<br>
-            波本威士忌 · 马拉斯奇诺樱桃</div>
+            <div class="drink-desc">Woodford Bourbon · Maraschino Cherry<br>波本威士忌 · 马拉斯奇诺樱桃</div>
           </div>
 
           <div class="drink-card">
@@ -946,6 +784,7 @@
             <strong>教堂｜Mary Immaculate Roman Catholic Church</strong>
             16 Browns Ln, Bellport, NY 11713
           </div>
+
           <div class="address-block">
             <strong>婚宴｜Bellport Inn</strong>
             160 S Country Rd, Bellport, NY 11713
@@ -954,13 +793,13 @@
 
         <div class="note">
           <strong>婚宴场地：</strong><br>
-          婚宴会在<strong>Bellport Inn 民宿的室外花园</strong>举行。
+          婚宴会在 Bellport Inn 民宿的室外花园举行。
         </div>
 
         <div class="note">
           <strong>婚宴卫生间：</strong><br>
           一楼有两个卫生间，从紫藤花长廊下面的入口进去后，厨房左右两侧各有一个。
-          另外一个卫生间在<strong>入口主楼二楼走廊尽头</strong>。
+          另外一个卫生间在入口主楼二楼走廊尽头。
         </div>
       </div>
     </details>
